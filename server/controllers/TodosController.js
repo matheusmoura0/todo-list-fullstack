@@ -19,3 +19,8 @@ export const create = async (req, res) => {
     await todos.create(req.body);
     res.json({ message: 'Todo created successfully' });
 };
+
+export const deleteTodo = async (req, res) => { 
+    await todos.destroy({ where: { id: req.params.id } });
+    res.json({ message: 'Todo deleted successfully' });
+}
