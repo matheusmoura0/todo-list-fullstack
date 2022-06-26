@@ -9,3 +9,8 @@ export const getById = async (req, res) => {
     const todo = await todos.findByPk(req.params.id);
     res.json(todo);
 }
+
+export const update = async (req, res) => { 
+    const todo = await todos.update(req.body, { where: { id: req.params.id } });
+    res.json(todo);
+}
