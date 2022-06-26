@@ -11,6 +11,6 @@ export const getById = async (req, res) => {
 }
 
 export const update = async (req, res) => { 
-    const todo = await todos.update(req.body, { where: { id: req.params.id } });
-    res.json(todo);
+     await todos.update(req.body, { where: { id: req.params.id } });
+    res.json({ message: 'Todo updated successfully' });
 }
